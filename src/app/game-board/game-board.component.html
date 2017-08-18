@@ -1,4 +1,29 @@
-<div>
-  {{ player1.name }}
-  {{ player2.name }}
+<div class="row" *ngIf="error">
+    <div class="col">
+        <div class="alert alert-warning" role="alert">
+            {{ error }}
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        Current Turn: {{ currentPlayer.name }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-2">
+        <app-store [player]="player2"></app-store>
+    </div>
+    <div class="col-8">
+        <div class="row">
+            <app-house class="col" *ngFor="let house of player2.houses | reverse" [house]="house" [player]="player2"></app-house>
+        </div>
+
+        <div class="row">
+            <app-house class="col" *ngFor="let house of player1.houses" [house]="house" [player]="player1" (click)="playHouse(house)"></app-house>
+        </div>
+    </div>
+    <div class="col-2">
+        <app-store [player]="player1"></app-store>
+    </div>
 </div>

@@ -1,4 +1,5 @@
 import { House } from './house';
+import { Store } from './store';
 
 export class Player {
     id: number;
@@ -12,9 +13,9 @@ export class Player {
         this.houses = [];
         // Create 6 houses
         for (let i = 0; i < 6; i++) {
-            this.houses.push(new House(4));
+            this.houses.push(new House(i, 4, this));
         }
         // Create 1 store
-        this.store = new House(0);
+        this.store = new Store(0, this);
     }
 }
