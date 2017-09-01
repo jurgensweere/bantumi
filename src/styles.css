@@ -3,6 +3,27 @@ body {
     padding-top: 5rem;
 }
 
+.board {
+    stroke: #333;
+    fill: #FFF;
+    stroke-width: 3;
+}
+.store rect{
+    stroke: #333;
+    stroke-width: 3;
+}
+.store text {
+    text-anchor: middle;
+}
+.store .seed {
+    font-size: 35px;
+}
+
+.house rect {
+    stroke: #333;
+    stroke-width: 3;
+}
+
 .house {
     height: 3em;
     margin-bottom: 1em;
@@ -24,18 +45,11 @@ body {
     line-height: 1em;
 }
 .player1 {
-    background-color: #CCF;
+    fill: #CCF;
 }
 .player2 {
-    background-color: #FCC;
+    fill: #FCC;
 }
 .store {
     text-align: center;
-}
-.store .seed {
-    height: 5em;
-    border: 1px solid #999;
-    border-radius: 5px;
-    line-height: 5em;
-    font-weight: bold;
 }

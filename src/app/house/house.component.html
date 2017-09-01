@@ -1,4 +1,4 @@
-<div class="house" [ngClass]="playerClass">
-  <span class="identifier">{{ house.id }}</span>
-  {{ house.seed }}
-</div>
+<svg:g class="house" [ngClass]="playerClass">
+    <svg:rect x="5" y="5" rx="30" ry="30" width="60" height="60"/>
+    <svg:text x="30" y="85" class="seed">{{ house.seed }}</svg:text>
+</svg:g>

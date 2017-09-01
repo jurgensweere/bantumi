@@ -1,4 +1,5 @@
-<div class="store">
-  {{ player.name }}
-  <div class="seed" [ngClass]="playerClass">{{ player.store.seed }}</div>
-</div>
+<svg:g class="store">
+  <svg:rect x="5" y="30" rx="20" ry="20" width="100" height="100" [ngClass]="playerClass"/>
+  <svg:text x="55" y="20">{{ player.name }}</svg:text>
+  <svg:text x="55" y="170" class="seed">{{ player.store.seed }}</svg:text>
+</svg:g>

@@ -3,7 +3,7 @@ import { House } from '../house';
 import { Player } from '../player';
 
 @Component({
-  selector: 'app-house',
+  selector: '[app-house]',
   templateUrl: './house.component.html',
   styleUrls: ['./house.component.css']
 })

@@ -11,19 +11,21 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-2">
-        <app-store [player]="player2"></app-store>
-    </div>
-    <div class="col-8">
-        <div class="row">
-            <app-house class="col" *ngFor="let house of player2.houses | reverse" [house]="house" [player]="player2"></app-house>
-        </div>
-
-        <div class="row">
-            <app-house class="col" *ngFor="let house of player1.houses" [house]="house" [player]="player1" (click)="playHouse(house)"></app-house>
-        </div>
-    </div>
-    <div class="col-2">
-        <app-store [player]="player1"></app-store>
+    <div class="col">
+        <svg width="100%" height="300px">
+            <rect x="10" y="10" rx="20" ry="20" width="720" height="200" class="board"/>
+            <svg x="20" y="20">
+                <svg:g app-store [player]="player2" />
+            </svg>
+            <svg x="610" y="20">
+                <svg:g app-store [player]="player1" />
+            </svg>
+            <svg *ngFor="let house of player2.houses | reverse; index as i" [attr.x]="(i * 80) + 140" y="20">
+                <svg:g app-house [house]="house" [player]="player2" />
+            </svg>
+            <svg *ngFor="let house of player1.houses; index as i" [attr.x]="(i * 80) + 140" y="120">
+                <svg:g app-house [house]="house" [player]="player1" (click)="playHouse(house)"/>
+            </svg>
+        </svg>
     </div>
 </div>
